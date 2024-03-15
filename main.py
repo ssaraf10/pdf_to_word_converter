@@ -12,15 +12,15 @@ def pdf_to_text(pdf_path):
             text += page.extract_text()
     return text
 
+
 def text_to_docx(text, docx_path):
     document = Document()
     document.add_paragraph(text)
     document.save(docx_path)
 
+
 def main():
     folder_path = Path(r"C:\Users\sweth\OneDrive\Shashank\Shashank EB1B\Shashank manuscript")
-    for file_path in folder_path.rglob("*.pdf"):
-        print(file_path)
 
     for file_path in folder_path.rglob("*.pdf"):
         print(file_path)
@@ -30,6 +30,7 @@ def main():
 
         text = pdf_to_text(pdf_path)
         text_to_docx(text, docx_path)
+
 
 if __name__ == "__main__":
     main()
